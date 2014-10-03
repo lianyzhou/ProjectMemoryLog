@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="webapp">
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="/resources/bower_components/bootstrap/dist/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/resources/style/report.css"/>
+	</head>
+	<body>
+		<div ng-controller="ReportCtrl">
+			<div class="col-md-12 text-center clearfix toolkit">
+				<h4 class="pull-left">蚁巡内存使用记录</h4>
+				<select class="form-control pull-left" ng-model="selectMonth" ng-options="month for month in months"></select>
+				<select class="form-control pull-left" ng-model="selectDate" ng-options="date for date in dates"></select>
+			</div>
+			<div class="col-md-12" ng-repeat="chart in charts">
+				<h4>时间：{{chart.startTime|time}} - {{chart.endTime|time}}</h4>				
+				<div chart="chart" class="chart"></div>
+			</div>
+		</div>
+		<script src="/resources/bower_components/jquery/jquery.min.js"></script>
+		<script src="/resources/bower_components/angular/angular.min.js"></script>
+		<script src="/resources/bower_components/underscore/underscore.js"></script>
+		<script src="/resources/bower_components/moment/moment.js"></script>
+		<script src="/resources/vendors/echarts.js"></script>
+		<script src="/resources/scripts/report.js"></script>
+	</body>
+</html>
