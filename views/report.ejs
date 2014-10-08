@@ -13,7 +13,7 @@
 				<select class="form-control pull-left" ng-model="selectDate" ng-options="date for date in dates"></select>
 			</div>
 			<div class="col-md-12" ng-repeat="chart in charts">
-				<h4>时间：{{chart.startTime|time}} - {{chart.endTime|time}}</h4>				
+				<h4>时间：{{chart.startTime}} - {{chart.endTime}} 最大值：{{chart.max}} 最小值：{{chart.min}}</h4>				
 				<div chart="chart" class="chart"></div>
 			</div>
 		</div>
