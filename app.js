@@ -16,6 +16,14 @@ app.use(express.bodyParser());
 app.use(express.compress());
 app.use(express.methodOverride());
 
+//针对window 2003检查并创建文件夹
+if(!fs.existsSync(path.join(__dirname , "logs"))) {
+	fs.mkdirSync(path.join(__dirname , "logs"));
+}
+if(!fs.existsSync(path.join(__dirname , "distScript"))) {
+	fs.mkdirSync(path.join(__dirname , "distScript"));
+}
+
 app.use(app.router);
 routes.init(app);
 
@@ -26,4 +34,4 @@ app.listen(app.get('port'), function () {
 });
 
 var berserk = require("./service/berserk");
-//berserk.lanuch();
+berserk.lanuch();
