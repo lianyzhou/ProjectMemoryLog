@@ -9,8 +9,8 @@
 		<div ng-controller="ReportCtrl">
 			<div class="col-md-12 text-center clearfix toolkit">
 				<h4 class="pull-left">蚁巡内存使用记录</h4>
-				<select class="form-control pull-left" ng-model="selectMonth" ng-options="month for month in months"></select>
-				<select class="form-control pull-left" ng-model="selectDate" ng-options="date for date in dates"></select>
+				<select class="form-control pull-left" ng-model="selectMonth" ng-options="month for month in months" ng-change="monthChange()"></select>
+				<select class="form-control pull-left" ng-model="selectDate" ng-options="date for date in dates" ng-change="getChartsData()"></select>
 			</div>
 			<div class="col-md-12" ng-repeat="chart in charts">
 				<h4>时间：{{chart.startTime}} - {{chart.endTime}} 最大值：{{chart.max}} 最小值：{{chart.min}}</h4>				

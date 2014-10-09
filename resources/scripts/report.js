@@ -133,6 +133,13 @@ angular.module("webapp",[])
 		});
 	}
 
+	function monthChange() {
+		getDates();
+		getChartsData();
+	}
+
 	getMonths();
 
+	$scope.getChartsData = getChartsData;
+	$scope.monthChange = monthChange;
 }]);
