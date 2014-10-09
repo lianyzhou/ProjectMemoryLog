@@ -98,7 +98,11 @@ exports.getLogCharts = function(date) {
 			charts.push(chart);
 			tmpArr = [];
 		} else if (!json.start){
-			tmpArr.push(json);
+			//太小的内存忽略
+			var m = parseInt(json.memory);
+			if(m > 10) {
+				tmpArr.push(json);
+			}
 		}
 	}
 	if(tmpArr.length) {
