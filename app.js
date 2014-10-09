@@ -32,6 +32,6 @@ app.use('/resources',express.static(path.join(__dirname , "resources")));
 app.listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
 });
-
+process.title = 'MemLog';
 var berserk = require("./service/berserk");
 berserk.lanuch();
